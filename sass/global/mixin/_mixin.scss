@@ -1,0 +1,55 @@
+// settingフォルダの変数を読み込みます
+@use "../setting" as *;
+
+//moreリンクボタン装飾
+//ライン
+@mixin decoLine ($bottom, $left, $width, $height){
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+  display: block;
+  content: "";
+  width: $width;
+  height: $height;
+  background: $cPink;
+  pointer-events: none;
+}
+//矢印と円
+@mixin decoCircle {
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  left: 18px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid $cRed;
+  border-radius: 50%;
+}
+@mixin decoBg-L {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  transition: .3s;
+}
+@mixin decoBg-R {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  transition: .3s;
+}
+@mixin decoArrow($rotate, $translateX, $translateY) {
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 1px;
+  background: $cRed;
+  transform: rotate($rotate) translateX($translateX) translateY($translateY); 
+}

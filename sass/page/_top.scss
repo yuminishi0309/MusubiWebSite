@@ -1,0 +1,460 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#top {
+    .mv{
+        background: url(../images/mv.jpg) center center / cover;
+        width: 100%;
+        height: 115vh;
+        margin-bottom: 276px;
+        &__catch {
+            position: absolute;
+            top: 264px;
+            left: 400px;
+            color: $cWhite;
+            font-size: 32px;
+            line-height: 1.8;
+            letter-spacing: .2em;
+            writing-mode: vertical-rl;
+        }
+        &__logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 116.59px;
+            height: 476px;
+        }
+        &__sub {
+            position: absolute;
+            bottom: 0;
+            left: 17%;
+            transform: translateY(100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 320px;
+            height: 320px;
+            color: $cWhite;
+            background: $cRed;
+            font-size: 38px;
+            line-height: 2;
+            letter-spacing: 0.3rem;
+        }
+    }
+    // about section  -----------------------------------
+    .about {
+        padding-top: 124px;
+        margin: 0 0 60px 17%;
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 120px;
+        }
+        &__box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &__ttl {
+            color: $cRed;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 2.3;
+        }
+        &__txt {
+            line-height: 2.6;
+        }
+        &__pic {
+            width: 1033px;
+            height: 616px;
+        }
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        &__btn {
+            display: inline-block;
+        }
+        &__link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 10px 24px;
+            color: $cBlack;
+            text-decoration: none;
+            
+            //　moreリンクボタン装飾ライン---------------
+            &::before {
+                @include decoLine(-22px, 0, 1px, 72px);
+            }
+            &:hover::before {
+                background: $cRed;
+            }
+            &::after {
+                @include decoLine(0, -16px, 232px, 1px);
+            }
+            &:hover::after {
+                background: $cRed;
+            }
+        }
+        // moreリンクボタン装飾 矢印と円--------------------
+        &__deco {
+            @include decoCircle;
+        }
+        // 左
+        &__deco--Left {
+            @include decoBg-L;
+            // background: rgba(255, 192, 203, 0.542);
+        }
+        &__link:hover {
+            .about__deco--Left {
+                transform: none;
+            }
+        }
+        &__arrow {
+            &Upper--Left{
+                @include decoArrow(30deg, 0px, -3px);
+            }
+            &Lower--Left {
+                @include decoArrow(-30deg, 0px, 3px);
+            }
+        }
+        // 右
+        &__deco--Right {
+            @include decoBg-R;
+        }
+        &__arrow {
+            &Upper--Right {
+                @include decoArrow(30deg, 0px, -3px);
+            }
+            &Lower--Right {
+                @include decoArrow(-30deg, 0px, 3px);
+            }
+        }
+        &__link:hover {
+            .about__deco--Right {
+                transform: translateX(100%);
+            }
+        }
+    }
+    // feature section  -----------------------------------
+    .feature {
+        // 上段---------------------
+        position: relative;
+        padding-top: 269px;
+        margin-bottom: 92px;
+        &__container {
+            display: flex;
+            align-items: center;
+            width: 1680px;
+            height: 688px;
+            margin-bottom: 242px;
+            background: $cPink;
+        }
+        &__ttl{
+            position: absolute;
+            top: 124px;
+            left: 16.7%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 344px;
+            background: $cWhite;
+            font-size: 32px;
+            letter-spacing: .2em;
+            writing-mode: vertical-rl;
+        }
+        &__box {
+            padding-left: 28.6%;
+            transform: translateY(-16px);
+        }
+        &__sub01 {
+            margin-bottom: 48px;
+            color: $cWhite;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 2.3;
+        }
+        &__txt01 {
+            color: $cWhite;
+            line-height: 2;
+        }
+        &__pic01--up {
+            position: absolute;
+            top: 142px;
+            right: 0;
+            width: 784px;
+            height: 432px;
+        }
+        &__pic01--btm {
+            position: absolute;
+            top: 614px;
+            right: 0;
+            width: 784px;
+            height: 432px;
+        }
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        // 下段---------------------
+        &__wrap {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 124px;
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 50%;
+                content: "";
+                display: block;
+                width: 1px;
+                height: 858px;
+                background: $cRed;
+            }
+        }
+        &__sub02--L {
+            margin: 40px 0 48px 16.7%;
+            font-size: 32px;
+            line-height: 2;
+        }
+        &__txt02--L {
+            margin: 0 0 -8px 16.7%;
+            line-height: 2;
+            
+        }
+        &__sub02--R {
+            margin: -16px 0 48px;
+            font-size: 32px;
+            line-height: 2;
+        }
+        &__txt02--R {
+            margin-bottom: 50px;
+            width: 394px;
+            line-height: 2;
+        }
+        &__pic02 {
+            width: 784px;
+            height: 520px;
+        }
+        &__btn {
+            display: flex;
+            justify-content: center;
+        }
+        &__link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 10px 24px;
+            color: $cBlack;
+            text-decoration: none;
+            //　moreリンクボタン装飾ライン---------------
+            &::before {
+                @include decoLine(-22px, 0, 1px, 72px);
+            }
+            &:hover::before {
+                background: $cRed;
+            }
+            &::after {
+                @include decoLine(0, -16px, 232px, 1px);
+            }
+            &:hover::after {
+                background: $cRed;
+            }
+        }
+        // moreリンクボタン装飾 矢印と円--------------------
+        &__deco {
+            @include decoCircle;
+        }
+        // 左
+        &__deco--Left {
+            @include decoBg-L;
+            // background: rgba(255, 192, 203, 0.542);
+        }
+        &__link:hover {
+            .feature__deco--Left {
+                transform: none;
+            }
+        }
+        &__arrow {
+            &Upper--Left{
+                @include decoArrow(30deg, 0px, -3px);
+            }
+            &Lower--Left {
+                @include decoArrow(-30deg, 0px, 3px);
+            }
+        }
+        // 右
+        &__deco--Right {
+            @include decoBg-R;
+        }
+        &__arrow {
+            &Upper--Right {
+                @include decoArrow(30deg, 0px, -3px);
+            }
+            &Lower--Right {
+                @include decoArrow(-30deg, 0px, 3px);
+            }
+        }
+        &__link:hover {
+            .feature__deco--Right {
+                transform: translateX(100%);
+            }
+        }
+    }
+    // menu section  -----------------------------------------
+    .menu {
+        padding-top: 124px;
+        &__ttl {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 216px;
+            padding-top: 32px;
+            margin: 0 auto 82px;
+            background: $cPink;
+            font-size: 32px;
+            font-weight: 600;
+            writing-mode: vertical-rl;
+            letter-spacing: 1em;
+        }
+        &__sub {
+            text-align: center;
+            margin-bottom: 120px;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 2;
+            letter-spacing: 0.1em;
+        }
+        &__wrap {
+            width: 75%;
+            margin-left: 16.7%;
+        }
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+        &__box01 {
+            width: 33.3%;
+        }
+        &__box02 {
+            width: 35.4%;
+        }
+        &__box03 {
+            width: 34.3%;
+        }
+        &__pic {
+            width: 60%;
+        }
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &__name {
+            margin-bottom: 32px;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.7;
+            letter-spacing: 0.1em;
+        }
+        &__txt {
+            position: relative;
+            margin-bottom: 68px;
+            font-size: 16px;
+            line-height: 2;
+            letter-spacing: 0.1em;
+            &::after {
+                position: absolute;
+                bottom: -46px;
+                left: 0;
+                display: block;
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: $cRed;
+            }
+        }
+        &__price {
+            font-size: 16px;
+            line-height: 2;
+            letter-spacing: 0.1em;
+        }
+
+        &__btn {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 216px;
+        }
+        &__link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 10px 24px;
+            color: $cBlack;
+            text-decoration: none;
+            //　moreリンクボタン装飾ライン---------------
+            &::before {
+                @include decoLine(-22px, 0, 1px, 72px);
+            }
+            &:hover::before {
+                background: $cRed;
+            }
+            &::after {
+                @include decoLine(0, -16px, 232px, 1px);
+            }
+            &:hover::after {
+                background: $cRed;
+            }
+        }
+        // moreリンクボタン装飾 矢印と円--------------------
+        &__deco {
+            @include decoCircle;
+        }
+        // 左
+        &__deco--Left {
+            @include decoBg-L;
+            // background: rgba(255, 192, 203, 0.542);
+        }
+        &__link:hover {
+            .menu__deco--Left {
+                transform: none;
+            }
+        }
+        &__arrow {
+            &Upper--Left{
+                @include decoArrow(30deg, 0px, -3px);
+            }
+            &Lower--Left {
+                @include decoArrow(-30deg, 0px, 3px);
+            }
+        }
+        // 右
+        &__deco--Right {
+            @include decoBg-R;
+        }
+        &__arrow {
+            &Upper--Right {
+                @include decoArrow(30deg, 0px, -3px);
+            }
+            &Lower--Right {
+                @include decoArrow(-30deg, 0px, 3px);
+            }
+        }
+        &__link:hover {
+            .menu__deco--Right {
+                transform: translateX(100%);
+            }
+        }
+    }
+}
