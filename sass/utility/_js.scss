@@ -1,3 +1,42 @@
 //各ファイルは必ず登録済みの変数を最初に読み込みます
 //as *で読み込みファイル名を省略することができます
 @use "../global" as *;
+
+// リサイズヘッダー設定  =============================
+.resizeHeader {
+    padding-top: 22px;
+    padding-bottom: 12px;
+}
+// gnav
+.bgChange {
+    &::before {
+        background: $cBlack;
+    }
+    &:last-child::after {
+        background: $cBlack;
+    }
+}
+
+.colorChange {
+    color: $cBlack;
+}
+
+// navボタン
+.btnBgChange {
+    border: none;
+    background: $cRed;
+    transition: .3s;
+    
+    &:hover {
+        border: 1px solid $cBlack;
+        background: $cWhite;
+    }
+}
+
+.btnColorChange {
+    transition: .3s;
+    &:hover {
+        color: $cBlack;
+    }
+}
+
