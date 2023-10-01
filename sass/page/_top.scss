@@ -242,7 +242,6 @@
         &__txt02--L {
             margin: 0 0 -8px 16.7%;
             line-height: 2;
-            
         }
         &__sub02--R {
             margin: -16px 0 48px;
@@ -269,7 +268,7 @@
             padding: 10px 24px;
             color: $cBlack;
             text-decoration: none;
-            //　moreリンクボタン装飾ライン---------------
+            // moreリンクボタン装飾ライン---------------
             &::before {
                 @include decoLine(-22px, 0, 1px, 72px);
             }
@@ -404,7 +403,6 @@
             line-height: 2;
             letter-spacing: 0.1em;
         }
-
         &__btn {
             display: flex;
             justify-content: center;
